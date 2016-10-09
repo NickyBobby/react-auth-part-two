@@ -7,7 +7,7 @@ class ContactListItem extends Component {
     const { contact } = this.props;
     return (
       <ListGroupItem>
-        <Link to={`/contact/${contact.id}`}>
+        <Link to={`/contacts/${contact.id}`}>
           <h4>{contact.name}</h4>
         </Link>
       </ListGroupItem>

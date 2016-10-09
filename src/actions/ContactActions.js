@@ -24,7 +24,7 @@ export default {
   getContact: (id) => {
 
     ContactsAPI
-      .getContact('htto://localhost:3001/api/contacts/' + id)
+      .getContact('http://localhost:3001/api/contacts/' + id)
       .then(contact => {
         AppDispatcher.dispatch({
           actionType: ContactConstants.RECEIVE_CONTACT,

@@ -36,7 +36,7 @@ var contacts = [
     id: 4,
     name: 'Holly Lloyd',
     email: 'holly@scotch.io',
-    image: '//gravatar.com/avatar/5e074956ee8ba1fea26e30d28c190495?s=200'
+    image: 'https://static.pexels.com/photos/27411/pexels-photo-27411-medium.jpg'
   },
   {
     id: 5,
@@ -47,6 +47,7 @@ var contacts = [
 ];
 
 app.get('/api/contacts', (req, res) => {
+  console.log('GET', '/api/contacts')
   const allContacts = contacts.map(contact => {
     return { id: contact.id, name: contact.name}
   });
@@ -54,6 +55,8 @@ app.get('/api/contacts', (req, res) => {
 });
 
 app.get('/api/contacts/:id', authCheck, (req, res) => {
+  console.log('GET', '/api/contacts/:id', req.params.id)
+
   res.json(contacts.filter(contact => contact.id === parseInt(req.params.id)));
 });
 
